@@ -4,16 +4,89 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
+
+		function setSearchEngine(){
+			let actions = {
+				"Google": "https://www.google.com/search",
+				"DuckDuckGo": "https://www.google.com/search",
+				"BING": "https://www.google.com/search",
+				"Ask": "https://www.google.com/search",
+		
+
+			}
+			let form =document.getElementById("searchForm");
+			// console.log ("Behoove")
+			let setSearchEngine = document.querySelector("[name=engine]:checked");
+			
+			let action = actions [setSearchEngine.value];
+			form.setAttribute("action",action);
+
+		}
     window.addEventListener("load", function(){
+
         // TODO: register the handler
+
+let form = document.getElementById("searchForm");
+form.addEventListener("submit", setSearchEngine);
+
+
     });
 	</script>
 </head>
 
 <body>
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
+<!-- <form id="searchForm"> -->
+
+	<form id ="searchForm">
+
+		<input type ="text" name="q"/>
+
+	<label> 
+		<input type = "radio" name="engine" value= "Google"/>
+	Google	
+ 	</label>
+
+	 <label>
+		<input type = "radio" name="engine" value= "BING"/>
+	BING	
+	</label>
+
+	<label>
+		<input type = "radio" name="engine" value="DuckDuckGo"/>
+	DuckDuckGo	
+	</label>
+
+<label>
+		<input type = "radio" name="engine" value= "Ask"/>
+    Ask
+</label>
+
+<input type="submit" value= "Go"/>
+
 	</form>
+
+	<!-- <form id="searchForm">
+		<div class="search-container">
+			<form action="/action_page.php">
+			  <input type="radio" placeholder="Robs radio" name="Robs search">
+			  <button type="submit">Google</button>
+			</form><br>
+
+			<form action="/action_page.php">
+			   <input type="text" placeholder="Robs Search.." name="Robs search">
+				<button type="submit">Submit</button><br>
+			  </form>
+
+			  <form action="/action_page.php">
+				<input type="radio" placeholder="Robs Search2.." name="Robs search2">
+				  <label for="html">BING</label><br>
+			   </form>
+
+
+
+		</div>
+		
+	</form> -->
 
 </body>
